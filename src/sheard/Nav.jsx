@@ -11,11 +11,11 @@ const Nav = () => {
       .catch()
   }
 
-
-  const navLinks = <>
+   const navLinks = <>
     <NavLink to='/'><li><a>Home</a></li></NavLink>
     <NavLink to='/register'><li><a>Register</a></li></NavLink>
     <NavLink to='/login'><li><a>login</a></li></NavLink>
+    <NavLink to='/addTours'><li><a>addTourist</a></li></NavLink>
   </>
   return (
     <div className="navbar bg-base-100 border-2 rounded-sm mb-4 dark:bg-[#304f47] dark:text-white ">
@@ -28,7 +28,7 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">ENJOY TOURISM</a>
+        <a className="btn btn-ghost text-sm">ENJOY TOURISM</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -55,8 +55,8 @@ const Nav = () => {
           </div>
         </div>
         {
-          user && <button onClick={handleLogOut} className="btn w-[120px] bg-[#304f47] text-white text-base font-semibold">Sign Out</button> ||
-          <Link to="/login" className="btn w-[100px] bg-blue-500 text-white text-base font-semibold">Login</Link>
+          user && <button onClick={handleLogOut} className="btn w-[120px] bg-[#e8d4b3] text-black text-base font-semibold">Sign Out</button> ||
+          <Link to="/login" className="btn w-[100px] bg-[#e8d4b3] text-black text-base font-semibold">Login</Link>
         }
       </div>
     </div>

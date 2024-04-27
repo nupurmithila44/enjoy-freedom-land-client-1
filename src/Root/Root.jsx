@@ -5,7 +5,7 @@ import Footer from "../sheard/Footer";
 
 const Root = () => {
     return (
-        <div className=" container mx-auto lg:px-5 px-2">
+        <div className=" container w-[300px] lg:w-[1180px] md:w-[760px]  mx-auto ">
             <Nav></Nav>
             <Outlet></Outlet>
             <Footer></Footer>

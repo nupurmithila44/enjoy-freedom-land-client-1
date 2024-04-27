@@ -13,6 +13,7 @@ import Home from './Component/Pages/Home';
 import Register from './Component/Pages/Register';
 import Login from './Component/Pages/Login/Login';
 import AuthProvider from './AuthPovider/AuthProvider';
+import AddTourists from './Component/AllTouristSpotPage/AddTourists';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element:<Login></Login>
+      },
+      {
+        path:'/addTours',
+        element: <AddTourists></AddTourists>
       }
     ],
   },

@@ -1,4 +1,9 @@
-import TouristSpots from "./TouristSpots";
+
+import Countries from "../AllTouristSpotPage/Countries";
+import TouristsSpots from "../AllTouristSpotPage/TouristsSpots";
+import { FaCar, FaArrowAltCircleRight } from "react-icons/fa";
+import { FaPersonBreastfeeding } from "react-icons/fa6";
+import { GrLike } from "react-icons/gr";
 
 const Home = () => {
     return (
@@ -60,18 +65,93 @@ const Home = () => {
             </div>
 
             {/* section 2 */}
-            <div className="container w-[300px] md:w-[600px] p-20 border-2 mx-auto">
-             <p className="text-[#c7923e] text-center">Choose your Package</p>
-             <h1 className="text-4xl font-bold text-center">Select your Best Package for your Travel</h1>
+            <div className="container w-[300px] md:w-[600px] lg:px-20  mx-auto py-8  mt-16">
+                <p className="text-[#c7923e] text-center">Choose your Package</p>
+                <h1 className="text-4xl font-bold text-center">Select your Best Package for your Tourist Spot</h1>
             </div>
             <div>
-                <TouristSpots></TouristSpots>
+                <TouristsSpots></TouristsSpots>
             </div>
 
             {/* section 3 */}
-            <div className="container w-[300px] md:w-[600px] p-20 border-2 mx-auto">
-             <p className="text-[#c7923e] text-center">Popular Destinations</p>
-             <h1 className="text-4xl font-bold text-center">Select Our Best Popular Destinations</h1>
+            <div className="container w-[300px] md:w-[600px] lg:px-20  mx-auto  py-8  mt-16">
+                <p className="text-[#c7923e] text-center">Popular Destinations</p>
+                <h1 className=" text-xl lg:text-4xl font-bold text-center">Select Our Best Popular Countries</h1>
+            </div>
+            <div>
+                <Countries></Countries>
+            </div>
+
+            {/* section 4 */}
+            <div className="container w-[300px] md:w-[600px] lg:px-20  mx-auto  py-8  mt-16">
+                <p className="text-[#c7923e] text-center">Why us?</p>
+                <h1 className=" text-xl lg:text-4xl font-bold text-center">Why Travel with rica wizzy Safari</h1>
+            </div>
+            <div className=" grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className=" border-2 rounded-box bg-[#304f47] text-white p-7">
+                    <p className="text-4xl flex justify-center "> <FaCar></FaCar> </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur  </p>
+                </div>
+                <div className="border-2 rounded-box bg-[#304f47] text-white p-7">
+                    <p className="text-4xl flex justify-center "> <FaPersonBreastfeeding></FaPersonBreastfeeding> </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur  </p>
+                </div>
+                <div className="border-2 rounded-box bg-[#304f47] text-white p-7">
+                    <p className="text-4xl flex justify-center "> <FaArrowAltCircleRight></FaArrowAltCircleRight> </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+                </div>
+                <div className=" border-2 rounded-box bg-[#304f47] text-white p-7">
+                    <p className="text-4xl flex justify-center"><GrLike></GrLike> </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur  </p>
+                </div>
+            </div>
+
+            {/* section 5 */}
+            <div className="container w-[300px] md:w-[600px] lg:px-20  mx-auto  py-8 mt-16">
+                <p className="text-[#c7923e] text-center">Our Traveller Say</p>
+                <h1 className=" text-xl lg:text-4xl font-bold text-center">Why Travel with rica wizzy Safari</h1>
+            </div>
+            <div className=" grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+                    <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                    <div className="space-y-4 text-center divide-y dark:divide-gray-300">
+                        <div className="my-2 space-y-1">
+                            <h2 className="text-xl font-semibold sm:text-2xl">Leroy Jenkins</h2>
+                            <p className="px-5 text-xs sm:text-base dark:text-gray-600">Full-stack developer</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+                    <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                    <div className="space-y-4 text-center divide-y dark:divide-gray-300">
+                        <div className="my-2 space-y-1">
+                            <h2 className="text-xl font-semibold sm:text-2xl">Leroy Jenkins</h2>
+                            <p className="px-5 text-xs sm:text-base dark:text-gray-600">Full-stack developer</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+                    <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                    <div className="space-y-4 text-center divide-y dark:divide-gray-300">
+                        <div className="my-2 space-y-1">
+                            <h2 className="text-xl font-semibold sm:text-2xl">Leroy Jenkins</h2>
+                            <p className="px-5 text-xs sm:text-base dark:text-gray-600">Full-stack developer</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+                    <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                    <div className="space-y-4 text-center divide-y dark:divide-gray-300">
+                        <div className="my-2 space-y-1">
+                            <h2 className="text-xl font-semibold sm:text-2xl">Leroy Jenkins</h2>
+                            <p className="px-5 text-xs sm:text-base dark:text-gray-600">Full-stack developer</p>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -31,10 +31,10 @@ const SocialUserLogin = () => {
             <div className="flex justify-around">
                 <button
                 onClick={handleGoogleLogin}
-                 className="btn  btn-outline btn-primary">Google</button>
+                 className="btn  btn-outline btn-success">Continue with Google</button>
                  <button
                 onClick={handleGitHubLogin}
-                 className="btn  btn-outline btn-secondary">GitHub</button>
+                 className="btn  btn-outline btn-success">Continue with GitHub</button>
             </div>
             
         </div>
