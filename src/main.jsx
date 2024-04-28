@@ -17,6 +17,7 @@ import AddTourists from './Component/AllTouristSpotPage/AddTourists';
 import ContactUs from './Component/Pages/ContactUs';
 import Gellary from './Component/Pages/Gellary';
 import ViewDetails from './Component/AllTouristSpotPage/ViewDetails';
+import MyListPage from './Component/AllTouristSpotPage/MyListPage';
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
       {
         path:'/addTours',
         element: <AddTourists></AddTourists>
+      },
+      {
+        path: '/userPages',
+        element: <MyListPage></MyListPage>,
+        loader: ()=> fetch('http://localhost:5000/addTours')
       },
       {
         path: '/contactUs',
