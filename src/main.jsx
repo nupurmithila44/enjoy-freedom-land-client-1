@@ -14,6 +14,9 @@ import Register from './Component/Pages/Register';
 import Login from './Component/Pages/Login/Login';
 import AuthProvider from './AuthPovider/AuthProvider';
 import AddTourists from './Component/AllTouristSpotPage/AddTourists';
+import ContactUs from './Component/Pages/ContactUs';
+import Gellary from './Component/Pages/Gellary';
+import ViewDetails from './Component/AllTouristSpotPage/ViewDetails';
 
 
 const router = createBrowserRouter([
@@ -24,7 +27,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/addTours')
+      },
+      {
+        path:'/viewDetails/:id',
+        element: <ViewDetails></ViewDetails>,
+        loader: ()=> fetch('http://localhost:5000/addTours')
       },
       {
         path: '/register',
@@ -37,6 +46,14 @@ const router = createBrowserRouter([
       {
         path:'/addTours',
         element: <AddTourists></AddTourists>
+      },
+      {
+        path: '/contactUs',
+        element: <ContactUs></ContactUs>
+      },
+      {
+        path: '/gellary',
+        element: <Gellary></Gellary>
       }
     ],
   },

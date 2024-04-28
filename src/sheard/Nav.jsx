@@ -16,6 +16,8 @@ const Nav = () => {
     <NavLink to='/register'><li><a>Register</a></li></NavLink>
     <NavLink to='/login'><li><a>login</a></li></NavLink>
     <NavLink to='/addTours'><li><a>addTourist</a></li></NavLink>
+    <NavLink to='/gellary'><li><a>Gellary</a></li></NavLink>
+    <NavLink to='/contactUs'><li><a>Contact Us</a></li></NavLink>
   </>
   return (
     <div className="navbar bg-base-100 border-2 rounded-sm mb-4 dark:bg-[#304f47] dark:text-white ">

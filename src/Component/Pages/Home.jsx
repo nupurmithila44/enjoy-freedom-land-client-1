@@ -4,8 +4,11 @@ import TouristsSpots from "../AllTouristSpotPage/TouristsSpots";
 import { FaCar, FaArrowAltCircleRight } from "react-icons/fa";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
 import { GrLike } from "react-icons/gr";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+    const tourisam = useLoaderData()
+    console.log(tourisam)
     return (
         <div>
             {/* section 1 */}
@@ -69,8 +72,10 @@ const Home = () => {
                 <p className="text-[#c7923e] text-center">Choose your Package</p>
                 <h1 className="text-4xl font-bold text-center">Select your Best Package for your Tourist Spot</h1>
             </div>
-            <div>
-                <TouristsSpots></TouristsSpots>
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {
+                    tourisam.map(tour=> <TouristsSpots key={tour._id} tour={tour}></TouristsSpots>)
+                }
             </div>
 
             {/* section 3 */}
