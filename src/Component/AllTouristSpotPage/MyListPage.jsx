@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyListPage = () => {
@@ -33,6 +33,8 @@ const MyListPage = () => {
                     text: "Your file has been deleted.",
                     icon: "success"
                 });
+                const remaining = users.filter(user=> user._id !== _id)
+                setUsers(remaining)
              }
             })
             }
@@ -60,7 +62,7 @@ const MyListPage = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            userPages.map(user => <tr key={user._id}>
+                            users.map(user => <tr key={user._id}>
                                 <th></th>
                                 <th>{user.tourName}</th>
                                 <th>{user.email}</th>
@@ -68,7 +70,9 @@ const MyListPage = () => {
                                 <th>{user.seasonality}</th>
                                 <th>{user.totalVisitors}</th>
                                 <th>{user.travelTime}</th>
-                                <th><button className="btn bg-[#77aa9d] text-white ">update</button></th>
+                                    <Link to={`/updatePage/${user._id}`}>
+                                    <th><button  className="btn bg-[#77aa9d] text-white ">update</button></th>
+                                    </Link>
                                 <th><button onClick={() => handleDelete(user._id)} className="btn bg-red-700">delete</button></th>
 
                             </tr>)
