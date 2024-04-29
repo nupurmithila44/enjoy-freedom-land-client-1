@@ -1,17 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../../AuthPovider/AuthProvider";
 
 
 const AddTourists = () => {
+    const {user} = useContext(AuthContext)
     const handleAddTourism = event => {
         event.preventDefault()
         const form = event.target
-        const countryName = form.countryName.value
+        const countryName = form.countryName.value;
         const tourName = form.tourName.value;
         const location = form.location.value;
         const photo = form.photo.value;
         const shortDescript = form.shortDescript.value;
-        const avgCost = form.avgCost.value;
+        const avgCos = form.avgCost.value;
+        const avgCost =parseInt(avgCos);
         const seasonality = form.seasonality.value;
         const travelTime = form.travelTime.value;
         const totalVisitors = form.totalVisitors.value;
@@ -122,13 +126,13 @@ const AddTourists = () => {
                             <label className="label">
                                 <span className="text-xl">User Name :</span>
                             </label>
-                            <input type="text" name="userName" placeholder="enter coffee category" className="input input-bordered w-full" id="" />
+                            <input type="text" name="userName" defaultValue={user?.displayName} placeholder="add user Name" className="input input-bordered w-full" id="" />
                         </div>
                         <div className="md:w-1/2 md:pl-4 mb-6">
                             <label className="label">
                                 <span className="text-xl">User Email:</span>
                             </label>
-                            <input type="email" name="email" placeholder="enter user email" className="input input-bordered w-full" id="" />
+                            <input type="email" name="email" defaultValue={user?.email} placeholder="enter user email" className="input input-bordered w-full" id="" />
                         </div>
                     </div>
                     <div>

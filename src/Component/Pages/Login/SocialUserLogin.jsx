@@ -1,9 +1,13 @@
 
 import { useContext } from 'react';
 import { AuthContext } from '../../../AuthPovider/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialUserLogin = () => {
     const {googleLogin, gitHubLogin, setUser} = useContext(AuthContext);
+    const navigate = useNavigate()
+   const location = useLocation()
+  
     
 
     // googleLogin 
@@ -11,6 +15,7 @@ const SocialUserLogin = () => {
         googleLogin()
         .then(result =>{
             setUser(result.user)
+            navigate(location?.state ? location.state : "/")
         })
     }
 
@@ -20,6 +25,7 @@ const SocialUserLogin = () => {
     gitHubLogin()
     .then(result =>{
         setUser(result.user)
+        navigate(location?.state ? location.state : "/")
     })
   }
 

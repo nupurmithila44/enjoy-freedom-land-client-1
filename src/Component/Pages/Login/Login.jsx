@@ -7,10 +7,9 @@ import SocialUserLogin from "./SocialUserLogin";
 
 const Login = () => {
     const { singInUser } = useContext(AuthContext);
-    const navigate = useNavigate()
     const location = useLocation()
-    const from = location?.state || '/'
-    console.log(location)
+    const navigate = useNavigate()
+    
 
     const handleLogin = e => {
         e.preventDefault()
@@ -31,7 +30,7 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user)
                 toast('your login successfully')
-                navigate(from)
+                navigate(location?.state ? location.state : "/")
             })
             .then(error => {
                 toast('Invalid email or password')

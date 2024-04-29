@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthPovider/AuthProvider";
 
 const MyListPage = () => {
     const userPages = useLoaderData()
+  
     const [users, setUsers] = useState(userPages)
+    const {user}=useContext(AuthContext)
+    const email = user.email
+    useEffect(()=>{
+        fetch('http://localhost:5000/addTours')
+        .then(res => res.json())
+        .then(data =>{
+            setUsers(data.filter((singleData)=>singleData.email===email))
+        })
+    },[])
 
     const handleDelete = _id => {
         console.log(_id)

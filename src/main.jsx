@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 import {
   createBrowserRouter,
@@ -19,6 +19,9 @@ import Gellary from './Component/Pages/Gellary';
 import ViewDetails from './Component/AllTouristSpotPage/ViewDetails';
 import MyListPage from './Component/AllTouristSpotPage/MyListPage';
 import UpdatePage from './Component/AllTouristSpotPage/UpdatePage';
+import PrivateRoute from './AuthPovider/PrivateRoute';
+import TouristsSpots from './Component/AllTouristSpotPage/TouristsSpots';
+
 
 
 const router = createBrowserRouter([
@@ -30,12 +33,19 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/addTours')
+       
       },
       {
-        path:'/viewDetails/:id',
-        element: <ViewDetails></ViewDetails>,
-        loader: ()=> fetch('http://localhost:5000/addTours')
+       path: '/touristsSpot',
+       element: <TouristsSpots></TouristsSpots>,
+       loader: () => fetch('http://localhost:5000/addTours')
+      },
+      {
+        path: '/viewDetails/:id',
+        element: <PrivateRoute>
+          <ViewDetails></ViewDetails>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/addTours')
       },
       {
         path: '/register',
@@ -43,21 +53,27 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element:<Login></Login>
+        element: <Login></Login>
       },
       {
-        path:'/addTours',
-        element: <AddTourists></AddTourists>
+        path: '/addTours',
+        element: <PrivateRoute>
+          <AddTourists></AddTourists>
+        </PrivateRoute>
       },
       {
         path: '/userPages',
-        element: <MyListPage></MyListPage>,
-        loader: ()=> fetch('http://localhost:5000/addTours')
+        element: <PrivateRoute>
+          <MyListPage></MyListPage>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/addTours')
       },
       {
-      path: '/updatePage/:id',
-      element: <UpdatePage></UpdatePage>,
-      loader: ({params})=> fetch(`http://localhost:5000/addTours/${params.id}`)
+        path: '/updatePage/:id',
+        element: <PrivateRoute>
+          <UpdatePage></UpdatePage>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/addTours/${params.id}`)
       },
       {
         path: '/contactUs',
@@ -75,7 +91,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ToastContainer></ToastContainer>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
 )
