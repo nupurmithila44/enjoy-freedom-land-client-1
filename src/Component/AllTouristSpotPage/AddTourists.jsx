@@ -59,7 +59,14 @@ const AddTourists = () => {
                             <label className="label">
                                 <span className="text-xl"> Country Name :</span>
                             </label>
-                            <input type="text" name="countryName" placeholder="enter Country Name" className="input input-bordered w-full" id="" />
+                            <select name="countryName" className=" w-full p-3 rounded-lg" id="">
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Cambodia">Cambodia</option>
+                            </select>
                         </div>
                         <div className="md:w-1/2 md:pl-4">
                             <label className="label">

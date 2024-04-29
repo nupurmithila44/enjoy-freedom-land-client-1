@@ -86,7 +86,7 @@ const Home = () => {
             </div>
 
             {/* section 3 */}
-            <Fade direction='up'>
+            <Fade direction='left'>
                 <div className="container w-[300px] md:w-[600px] lg:px-20  mx-auto  py-16  mt-20">
                     <p className="text-[#c7923e] text-center">Popular Destinations</p>
                     <h1 className=" text-xl lg:text-4xl font-bold text-center ">Select Our Best Popular Countries</h1>
