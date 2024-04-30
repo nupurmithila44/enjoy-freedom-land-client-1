@@ -9,7 +9,7 @@ const TouristsSpots = () => {
     console.log(filter)
 
     useEffect(() => {
-        fetch('http://localhost:5000/addTours')
+        fetch('https://enjoy-freedom-server.vercel.app/addTours')
             .then(res => res.json())
             .then(data => {
                 console.log(data)

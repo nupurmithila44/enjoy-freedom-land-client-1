@@ -39,14 +39,14 @@ const router = createBrowserRouter([
       {
         path: '/touristsSpot',
         element: <TouristsSpots></TouristsSpots>,
-        loader: () => fetch('http://localhost:5000/addTours')
+        loader: () => fetch('https://enjoy-freedom-server.vercel.app/addTours')
       },
       {
         path: '/viewDetails/:id',
         element: <PrivateRoute>
           <ViewDetails></ViewDetails>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/addTours')
+        loader: () => fetch('https://enjoy-freedom-server.vercel.app/addTours')
       },
       {
         path: '/register',
@@ -67,19 +67,19 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyListPage></MyListPage>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/addTours')
+        loader: () => fetch('https://enjoy-freedom-server.vercel.app/addTours')
       },
       {
         path: '/updatePage/:id',
         element: <PrivateRoute>
           <UpdatePage></UpdatePage>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addTours/${params.id}`)
+        loader: ({ params }) => fetch(`https://enjoy-freedom-server.vercel.app/addTours/${params.id}`)
       },
        {
        path:'/coutries/:countri',
        element: <Countries></Countries>,
-       loader:()=> fetch(`http://localhost:5000/addTours`)
+       loader:()=> fetch(`https://enjoy-freedom-server.vercel.app/addTours`)
        },
       {
         path: '/contactUs',

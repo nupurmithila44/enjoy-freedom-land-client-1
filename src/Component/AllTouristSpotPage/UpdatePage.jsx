@@ -22,7 +22,7 @@ const UpdatePage = () => {
         console.log(updateTourism)
 
         // send data to the server
-        fetch(`http://localhost:5000/addTours/${_id}`,{
+        fetch(`https://enjoy-freedom-server.vercel.app/addTours/${_id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'

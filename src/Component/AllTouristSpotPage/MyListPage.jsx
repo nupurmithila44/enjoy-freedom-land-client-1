@@ -10,7 +10,7 @@ const MyListPage = () => {
     const {user}=useContext(AuthContext)
     const email = user.email
     useEffect(()=>{
-        fetch('http://localhost:5000/addTours')
+        fetch('https://enjoy-freedom-server.vercel.app/addTours')
         .then(res => res.json())
         .then(data =>{
             setUsers(data.filter((singleData)=>singleData.email===email))
@@ -32,7 +32,7 @@ const MyListPage = () => {
             if (result.isConfirmed) {
                
 
-            fetch(`http://localhost:5000/addTours/${_id}`,{
+            fetch(`https://enjoy-freedom-server.vercel.app/addTours/${_id}`,{
                 method: "DELETE"
             })
             .then(res => res.json())

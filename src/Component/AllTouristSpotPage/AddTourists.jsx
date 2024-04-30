@@ -26,7 +26,7 @@ const AddTourists = () => {
         console.log(newTourism)
 
         // send data to the server
-        fetch('http://localhost:5000/addTours',{
+        fetch('https://enjoy-freedom-server.vercel.app/addTours',{
             method:"POST",
             headers:{
                 'content-type':'application/json'
