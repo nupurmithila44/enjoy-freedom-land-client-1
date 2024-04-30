@@ -21,6 +21,7 @@ import MyListPage from './Component/AllTouristSpotPage/MyListPage';
 import UpdatePage from './Component/AllTouristSpotPage/UpdatePage';
 import PrivateRoute from './AuthPovider/PrivateRoute';
 import TouristsSpots from './Component/AllTouristSpotPage/TouristsSpots';
+import Countries from './Component/AllTouristSpotPage/Countries';
 
 
 
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-       
+
       },
       {
-       path: '/touristsSpot',
-       element: <TouristsSpots></TouristsSpots>,
-       loader: () => fetch('http://localhost:5000/addTours')
+        path: '/touristsSpot',
+        element: <TouristsSpots></TouristsSpots>,
+        loader: () => fetch('http://localhost:5000/addTours')
       },
       {
         path: '/viewDetails/:id',
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
         </PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/addTours/${params.id}`)
       },
+       {
+       path:'/coutries/:countri',
+       element: <Countries></Countries>,
+       loader:()=> fetch(`http://localhost:5000/addTours`)
+       },
       {
         path: '/contactUs',
         element: <ContactUs></ContactUs>

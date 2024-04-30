@@ -55,7 +55,7 @@ console.log(registerUser)
             console.log(error)
         })   
     })
-    .then(error =>{
+    .catch(error =>{
         console.log(error)
     })
   }

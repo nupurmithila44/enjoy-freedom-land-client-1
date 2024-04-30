@@ -32,9 +32,9 @@ const Login = () => {
                 toast('your login successfully')
                 navigate(location?.state ? location.state : "/")
             })
-            .then(error => {
-                toast('Invalid email or password')
+            .catch(error => {
                 console.error(error)
+                toast('Invalid email or password')
             })
     }
 

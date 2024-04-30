@@ -5,16 +5,24 @@ import ti1 from '../../assets/team1-DAEq5hfv.jpg'
 import ti2 from '../../assets/team2-Ba3w3mnB.jpg'
 import ti3 from '../../assets/team3-DCSw4Ko_.jpg'
 import ti4 from '../../assets/team4-0OXQ7Fh7.png'
-
-import Countries from "../AllTouristSpotPage/Countries";
-import { FaCar, FaArrowAltCircleRight } from "react-icons/fa";
+import { FaCar, FaArrowAltCircleRight, FaMapMarkerAlt } from "react-icons/fa";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
 import { GrLike } from "react-icons/gr";
-
 import { Typewriter } from 'react-simple-typewriter'
 import { Fade } from "react-awesome-reveal";
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
+    const [country, setCountry] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/countris')
+            .then(res => res.json())
+            .then(data => {
+                setCountry(data)
+            })
+    }, [])
+
 
     return (
         <div>
@@ -85,14 +93,35 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* section 3 */}
+            {/* section 2 */}
             <Fade direction='left'>
                 <div className="container w-[300px] md:w-[600px] lg:px-20  mx-auto  py-16  mt-20">
                     <p className="text-[#c7923e] text-center">Popular Destinations</p>
                     <h1 className=" text-xl lg:text-4xl font-bold text-center ">Select Our Best Popular Countries</h1>
                 </div>
+
                 <div>
-                    <Countries></Countries>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+                        {
+                            country.map(countri => <div key={countri._id} className="card card-compact w-96 bg-base-100 p-2 shadow-xl">
+                                <div className="rounded-box">
+                                    <img className=" px-6 pt-2 rounded-full" src={countri.photo} alt="Shoes" />
+                                </div>
+                                <div className="card-body">                      
+                                    <h1 className="text-2xl font-semibold">{countri.countryName}</h1>
+                                    <p className="text-sm">{countri.shortDescript}</p>
+
+                                    <div className="flex justify-between">                              
+                                        <div className="flex justify-between">
+                                            <Link to={`/coutries/${countri.countryName}`}><button className="btn  mx-3 bg-[#c7923e]">View Details</button></Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>)
+                        }
+
+                    </div>
                 </div>
             </Fade>
 
