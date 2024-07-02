@@ -15,4 +15,11 @@
 5. React icons.
 
 
-- [https://enjoy-freedom-land-client.netlify.app/](https://enjoy-freedom-land-client.netlify.app/) 
+- [https://enjoy-freedom-land-client.netlify.app/](https://enjoy-freedom-land-client.netlify.app/)
+
+-  # Project technology
+  . Firebase
+  . mongodb
+  . react
+  . Tailwind css
+  . DaisyUI
